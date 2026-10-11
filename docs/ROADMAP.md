@@ -1,3 +1,24 @@
+# Desktop — Outcome-based Delivery Roadmap
+
+> **Epics** group work by subsystem; **stories** represent individual changes; **milestones** are demonstrable integration results. The original M1–M12 story prefixes are permanent backlog identifiers, **not** native GitHub milestones. Milestones below intentionally span epics. No dates are committed.
+
+| Checkpoint | Demonstrable outcome | Required verification | Contributing epics |
+|---|---|---|---|
+| D1 | **Core skeleton boots a diagnostic ROM** | C11/CMake build, core APIs, cartridge load, deterministic instruction stepping; a test ROM can be loaded and traced. | #1, #2, #3 |
+| D2 | **CPU passes reference tests** | Legal SM83 base/CB instructions, flags and timings pass selected instruction test ROMs; interrupts and timers validated. | #2, #3 |
+| D3 | **First accurate rendered frame** | LCD mode scheduling, background/window/sprites and DMA produce a verified 160×144 frame. | #3, #4 |
+| D4 | **First playable game** | SDL3 presents frames; joypad input works; ROM runs interactively at appropriate emulated timing. | #2, #3, #4, #5 |
+| D5 | **Desktop v1.0 release** | APU output, supported cartridge banking and saves, regression/compatibility test matrix, downloadable build and docs. | #3, #5, #6, #7 |
+
+## Rules for milestone completion
+
+1. Attach test logs, captured frames or on-device evidence to a tracking issue or release notes.
+2. All critical acceptance tests must pass; any exceptions are explicitly documented.
+3. An epic's stories can contribute to several checkpoints and an epic can stay open after a milestone completes.
+4. This table is a **milestone specification** in documentation, not native GitHub Milestones; those require creation and issue assignment separately.
+
+## Existing backlog
+
 # Game Boy Emulator — Desktop Roadmap
 
 Portable, original Nintendo Game Boy (DMG-01) emulator written in **C11**. Desktop host uses **SDL3**; core must remain independent of SDL, Pico SDK and FreeRTOS.
